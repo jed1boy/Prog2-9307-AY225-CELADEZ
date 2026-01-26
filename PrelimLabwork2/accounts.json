@@ -1,0 +1,17 @@
+[
+  {
+    "studentId": "1001",
+    "password": "1234",
+    "realName": "Juan Dela Cruz"
+  },
+  {
+    "studentId": "1002",
+    "password": "5678",
+    "realName": "Maria Clara"
+  },
+  {
+    "studentId": "1003",
+    "password": "password",
+    "realName": "Jose Rizal"
+  }
+]
