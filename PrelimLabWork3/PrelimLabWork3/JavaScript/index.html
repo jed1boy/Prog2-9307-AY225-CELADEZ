@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prelim Grade Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="calculator-container">
+        <header>
+            <h1>Prelim Grade Calculator</h1>
+            <p class="subtitle">Target Grade Predictor | 70% Exam, 30% Class Standing</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Side: Inputs -->
+            <section class="left-side">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="attendance">Attendance Score</label>
+                        <input type="number" id="attendance" placeholder="0-100" min="0" max="100">
+                    </div>
+                    <div class="input-group">
+                        <label for="lab1">Lab Work 1</label>
+                        <input type="number" id="lab1" placeholder="Grade">
+                    </div>
+                    <div class="input-group">
+                        <label for="lab2">Lab Work 2</label>
+                        <input type="number" id="lab2" placeholder="Grade">
+                    </div>
+                    <div class="input-group">
+                        <label for="lab3">Lab Work 3</label>
+                        <input type="number" id="lab3" placeholder="Grade">
+                    </div>
+                    <!-- Prelim Exam Input removed as per instructions -->
+                </div>
+
+                <button id="calculate-btn">Calculate Required Scores</button>
+                <p id="error-msg" class="error-text hidden">Please fill in all fields with valid numbers (0-100).</p>
+            </section>
+
+            <!-- Right Side: Results -->
+            <section id="results" class="right-side hidden">
+
+                <!-- Input Summary Section (Requirement: Display inputs) -->
+                <div class="summary-section">
+                    <h4>Input Summary</h4>
+                    <ul id="input-summary-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Lab Average</h3>
+                        <p id="res-lab-avg" class="value">0.00</p>
+                    </div>
+                    <div class="result-card">
+                        <h3>Class Standing (30%)</h3>
+                        <p id="res-class-standing" class="value">0.00</p>
+                    </div>
+                </div>
+
+                <div class="target-scores">
+                    <div class="target-item">
+                        <div class="target-info">
+                            <span class="target-label">To Pass (Target: 75)</span>
+                            <strong>Required Exam Score</strong>
+                        </div>
+                        <span id="req-pass" class="exam-value">--</span>
+                    </div>
+                    <div class="target-item excellent">
+                        <div class="target-info">
+                            <span class="target-label">For Excellent (Target: 100)</span>
+                            <strong>Required Exam Score</strong>
+                        </div>
+                        <span id="req-excellent" class="exam-value">--</span>
+                    </div>
+                </div>
+
+                <div class="remarks-box">
+                    <h4>Remarks</h4>
+                    <p id="remarks-text">Enter your grades to see your standing.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
