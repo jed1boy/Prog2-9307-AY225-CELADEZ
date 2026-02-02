@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Records Management</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        form { 
+            margin: 20px 0; 
+            display: flex; 
+            gap: 10px; 
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        input { 
+            padding: 8px; 
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            flex: 1;
+            min-width: 100px;
+        }
+        button[type="submit"] {
+            padding: 8px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Class Records Management</h1>
+    
+    <h3>Add New Record</h3>
+    <form id="record-form">
+        <input type="text" id="record-studentid" placeholder="StudentID" required>
+        <input type="text" id="record-firstname" placeholder="First Name" required>
+        <input type="text" id="record-lastname" placeholder="Last Name" required>
+        <input type="text" id="record-lab1" placeholder="LAB WORK 1" required>
+        <input type="text" id="record-lab2" placeholder="LAB WORK 2" required>
+        <input type="text" id="record-lab3" placeholder="LAB WORK 3" required>
+        <input type="text" id="record-prelim" placeholder="PRELIM EXAM" required>
+        <input type="text" id="record-attendance" placeholder="ATTENDANCE GRADE" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <hr>
+
+    <table id="records-table">
+        <thead>
+            <tr>
+                <th>StudentID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>LAB WORK 1</th>
+                <th>LAB WORK 2</th>
+                <th>LAB WORK 3</th>
+                <th>PRELIM EXAM</th>
+                <th>ATTENDANCE</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Rows will be dynamically generated -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
