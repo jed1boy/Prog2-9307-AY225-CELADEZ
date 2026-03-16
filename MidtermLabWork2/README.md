@@ -5,6 +5,7 @@
 - Course: Math 101 - Linear Algebra
 - School: University of Perpetual Help System DALTA, Molino Campus
 - Date Completed: March 16, 2026
+- Github Repo : https://github.com/jed1boy/uphsd-cs-celadez-jedcedric
 
 ## Assigned Matrix
 \[
@@ -21,13 +22,13 @@ M = \begin{bmatrix}
 
 ## How to Run
 ### Java
-```bash
+```
 javac DeterminantSolver.java
 java DeterminantSolver
 ```
 
 ### JavaScript (Node.js)
-```bash
+```
 node determinant_solver.js
 ```
 
