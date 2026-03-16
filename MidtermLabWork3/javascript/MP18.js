@@ -23,6 +23,7 @@ rl.question('Enter dataset file path: ', (filePath) => {
         const lines = fileContent.split(/\r?\n/);
         
         let headerFound = false;
+        let headerRow = null;
         let cleanedRows = [];
         let rowsRemoved = 0;
 
@@ -34,7 +35,7 @@ rl.question('Enter dataset file path: ', (filePath) => {
             const cells = parseCsvLine(line);
 
             if (!headerFound) {
-                cleanedRows.push(cells);
+                headerRow = cells;
                 headerFound = true;
                 continue;
             }
@@ -51,12 +52,20 @@ rl.question('Enter dataset file path: ', (filePath) => {
 
         console.log(`\n--- Dataset Cleanup Summary ---`);
         console.log(`Removed ${rowsRemoved} rows containing empty fields.`);
-        console.log(`Remaining valid records: ${cleanedRows.length - 1}`); // exclude header
+        console.log(`Remaining valid records: ${cleanedRows.length}`);
         console.log(`\n--- Sample Records (First 5) ---`);
-        
-        cleanedRows.slice(0, 6).forEach(row => {
-            console.log(row.join(' | '));
-        });
+
+        if (cleanedRows.length === 0) {
+            console.log('No rows remain after cleanup.');
+        } else {
+            if (headerRow) {
+                console.log(headerRow.join(' | '));
+            }
+
+            cleanedRows.slice(0, 5).forEach(row => {
+                console.log(row.join(' | '));
+            });
+        }
 
     } catch (err) {
         console.error('Error processing file:', err.message);
